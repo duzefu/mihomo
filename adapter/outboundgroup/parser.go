@@ -178,6 +178,9 @@ func ParseProxyGroup(config map[string]any, proxyMap map[string]C.Proxy, provide
 	case "url-test":
 		opts := parseURLTestOption(config)
 		group = NewURLTest(groupOption, providers, opts...)
+	case "optimized-url-test":
+		opts := parseOptimizedURLTestOption(config)
+		group = NewOptimizedURLTest(groupOption, providers, opts...)
 	case "select":
 		group = NewSelector(groupOption, providers)
 	case "fallback":
